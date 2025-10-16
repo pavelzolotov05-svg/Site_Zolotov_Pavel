@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GoCollaborate</title>
+    <link rel="stylesheet" href="Styles.css" /> 
+    <script>
+      class SimpleSlider {
+          constructor(container, interval = 3000) {
+              this.container = container;
+              this.slides = container.querySelectorAll('.slide');
+              this.interval = interval;
+              this.currentIndex = 0;
+              this.init();
+          }
+      
+          init() {
+              this.showSlide(0);
+              this.startAutoPlay();
+              
+              // Пауза при наведении
+              this.container.addEventListener('mouseenter', () => this.stopAutoPlay());
+              this.container.addEventListener('mouseleave', () => this.startAutoPlay());
+          }
+      
+          showSlide(index) {
+              // Скрываем все слайды
+              this.slides.forEach(slide => slide.classList.remove('active'));
+              
+              // Показываем текущий слайд
+              this.slides[index].classList.add('active');
+          }
+      
+          nextSlide() {
+              this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+              this.showSlide(this.currentIndex);
+          }
+      
+          startAutoPlay() {
+              this.intervalId = setInterval(() => this.nextSlide(), this.interval);
+          }
+      
+          stopAutoPlay() {
+              if (this.intervalId) {
+                  clearInterval(this.intervalId);
+              }
+          }
+      }
+      
+      // Инициализация слайдера после загрузки страницы
+      document.addEventListener('DOMContentLoaded', function() {
+          const sliderContainer = document.querySelector('.slider-container');
+          new SimpleSlider(sliderContainer, 5000); // 3 секунды между слайдами
+      });
+      </script>
+</head>
+
+<body>
+<header>
+  <a href="#" class="logo" aria-label="GoCollaborate">
+   <img src="Img\logo.png" class="logo1">
+    GoCollaborate
+  </a>
+  <nav aria-label="Главное меню">
+    <a href="index.html">О платформе</a>
+    <a href="Index2.html">О компании</a>
+    <a href="Index3.html">Попробовать "GC"</a>
+  </nav>
+</header>
+
+<main>
+    <div class="block1">
+        <section class="content">
+            <h1>GoCollaborate</h1>
+            <p>Внезапно, сторонники тоталитаризма в науке рассмотрены исключительно в разрезе маркетинговыхи финансовых предпосылок.</p>
+            <a href="Index3.html" class="btn" role="button">Попробовать</a>
+        </section>
+    </div>
+    <div>
+        <section class="image-wrapper" aria-label="Рабочая команда за столом">
+          <div class="slider-container" style="width: 540px; height: 378px;">
+            <div class="slider">
+                <img src="Img\Rectangle 17.png" alt="Slide 1" class="slide active">
+                <img src="Img\image-oAJU0pkoQKrrej_vFzD3b.png" alt="Slide 2" class="slide">
+                <img src="Img\image-Z-cjEyG3qEOelBYYtQ6qa.png" alt="Slide 3" class="slide">
+                <img src="Img\Rectangle 17.png" alt="Slide 4" class="slide">
+                <img src="Img\image-Z-cjEyG3qEOelBYYtQ6qa.png" alt="Slide 5" class="slide">
+            </div>
+        </div>
+        </section>
+    </div>
+
+</main>
+<div class="company-section">
+    <h1 class="section-title">О компании</h1>
+    
+  
+    <div>
+        <p class="section-description">Рассмотрим особенности платформы немного подробнее</p>
+        <div class="smallblock1">
+            <div class="placeholderpic3"><img src="Img\Rectangle 73.png"></div>
+            <div class="textarena">
+                <h3 class="bigtext3">ИИ-ассистент</h3>
+                <p class="texterok">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae eos, error qui ratione quam, commodi dolorem aliquam quas cumque reprehenderit explicabo quae odit repellat velit harum dicta illum sapiente autem.
+                </p>
+            </div>
+        </div>
+        <div class="smallblock">
+            <div class="textarena">
+                <h3 class="bigtext3">Облачное хранилище</h3>
+                <p class="texterok">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae eos, error qui ratione quam, commodi dolorem aliquam quas cumque reprehenderit explicabo quae odit repellat velit harum dicta illum sapiente autem.
+                </p>
+            </div>
+            <div class="placeholderpic3"><img src="Img\Rectangle 73.png"></div>
+        </div>
+        <div class="smallblock">
+            <div class="placeholderpic3"><img src="Img\Rectangle 73.png"></div>
+            <div class="textarena">
+                <h3 class="bigtext3">ИИ-ассистент</h3>
+                <p class="texterok">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae eos, error qui ratione quam, commodi dolorem aliquam quas cumque reprehenderit explicabo quae odit repellat velit harum dicta illum sapiente autem.
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="register-section">
+    <h1>Зарегистрируйтесь сейчас</h1>
+    <div class="register-content">
+      <div class="text-block">
+        <p>Создайте аккаунт и попробуйте GoCollaborate уже сейчас и получите доступ ко всем возможностям без ограничений на любом устройстве</p>
+      </div>
+      <div class="actions-block">
+        <a href="Index3.html" class="btn" role="button">Попробовать</a>
+        <a href="Index4.Html" class="login-link">Уже есть аккаунт?</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+        <img src="Img\logo.png">
+        GoCollaborate
+    </div>
+  
+    <div class="footer-socials">
+      <strong>Социальные сети</strong>
+        <a href="#"><img src="Img\tg.png" alt="Telegram"></a>
+        <a href="#"><img src="Img\Vk.png" alt="VK"></a>
+        <a href="#"><img src="Img\yt.png" alt="YouTube"></a>
+    </div>
+  
+    <div class="footer-links">
+      <a href="index.html" class="links">О платформе</a>
+      <a href="Index2.Html" class="links">О компании</a>
+      <a href="Index3.Html">Попробовать “GC”</a>
+    </div>
+  
+    <div class="footer-subscribe">
+      <div class="footer-subscribe-text">
+        Подпишитесь на новости проекта<br>что бы оставаться в курсе
+      </div>
+      <form action="#">
+        <input type="email" placeholder="E-mail" required>
+        <button type="submit" aria-label="Отправить подписку">
+          <img src="Img\send.png" alt="Отправить">
+        </button>
+      </form>
+    </div>
+  </footer>
+
+</body>
+</html>
